@@ -1,8 +1,8 @@
-# 🛠️ Ansible Homelab Automation
+# Ansible Homelab Automation
 
 Automate your self-hosted homelab using Ansible, including Proxmox nodes, Ubuntu servers, and containers. This repo is designed for agentless SSH-based automation.
 
-## 📁 Structure
+## Structure
 
 ```bash
 ansible-homelab/
@@ -15,11 +15,11 @@ ansible-homelab/
 └── README.md
 ```
 
-## 🧩 Inventory Setup
+## Inventory Setup
 
 Edit `inventory/hosts.yml` to define your nodes and groupings. You can organize them into groups like `proxmox`, `servers`, etc.
 
-## 🔐 SSH Access
+## SSH Access
 
 Ensure your control node (e.g., your laptop or management VM) can SSH into each host:
 ```bash
@@ -29,7 +29,7 @@ ssh-copy-id jay@10.1.20.10
 
 Edit `group_vars/all.yml` for defaults like SSH user.
 
-## ⚙️ Configuration
+## Configuration
 
 `ansible.cfg`:
 ```ini
@@ -40,7 +40,7 @@ retry_files_enabled = False
 timeout = 20
 ```
 
-## 🚀 Running Playbooks
+## Running Playbooks
 
 Run a specific playbook like:
 
@@ -54,7 +54,7 @@ Test host connectivity:
 ansible all -m ping
 ```
 
-## ✨ Included Playbooks
+## Included Playbooks
 
 ### Wake-on-LAN
 Sends a WoL packet to a powered-off Proxmox node.
@@ -65,13 +65,13 @@ Updates all apt packages on systems in the `servers` group.
 ### Install Docker
 Installs Docker CE using the official repo via a reusable role.
 
-## 📦 Roles
+## Roles
 
 Reusable roles are stored in `roles/`:
 - `common`: General utilities and tools
 - `docker`: Handles Docker installation on Ubuntu
 
-## 🔄 To-Do Ideas
+## To-Do Ideas
 
 - Automate backups
 - Pi-hole and DNS setup
