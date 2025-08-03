@@ -1,0 +1,5 @@
+- name: Wake up Proxmox node
+  hosts: localhost
+  tasks:
+    - name: Send WoL packet
+      ansible.builtin.command: etherwake -i eno1 AA:BB:CC:DD:EE:FF

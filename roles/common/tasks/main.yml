@@ -1,0 +1,9 @@
+- name: Ensure base packages are installed
+  apt:
+    name:
+      - curl
+      - vim
+      - git
+      - htop
+    state: present
+    update_cache: yes
